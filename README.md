@@ -19,7 +19,7 @@ curl --request POST --url http://localhost:5000/api/v1/ner --header 'content-typ
 And you should receive the following response
 
 ```
-{"entities":"TODO","scores":[0.9963508248329163,0.9994429349899292],"submitted-message":"When were Alexander von Humboldt and Bernhard Riemann born?","texts":["Alexander von Humboldt","Bernhard Riemann"]}
+{"entities":[{"score":0.9963508248329163,"text":"Alexander von Humboldt"},{"score":0.9994429349899292,"text":"Bernhard Riemann"}],"flair-version":"0.7","submitted-message":"When were Alexander von Humboldt and Bernhard Riemann born?"}
 ```
 
 Run Flair Sentiment as REST Service, whereas make sure that port 5000 is available
