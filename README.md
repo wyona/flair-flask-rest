@@ -25,14 +25,13 @@ And you should receive the following response
 Run Flair Sentiment as REST Service, whereas make sure that port 5000 is available
 
 ```
-python3 flair-sentiment-rest.py
+python flair-sentiment-rest.py
 ```
 
 Test it
 
 ```
 curl --request POST --url http://localhost:5000/api/v1/analyzeSentiment --header 'content-type: application/json' --data '{ "message":"I could watch The Marriage over and over again. At 90 minutes, it'\''s just so delightfully heartbreaking." }'
-{"polarity":0.9978204965591431,"result":"POSITIVE"}
 ```
 
 And you should receive the following response
