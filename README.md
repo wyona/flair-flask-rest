@@ -39,3 +39,15 @@ And you should receive the following response
 ```
 {"polarity":0.9978204965591431,"result":"POSITIVE"}
 ```
+
+## How to build and run Docker
+
+### CPU
+
+```bash
+docker build -t flair-ner-cpu -f ./Dockerfile.cpu .
+```
+
+```bash
+docker run -p 5000:5000 flair-ner-cpu
+```
