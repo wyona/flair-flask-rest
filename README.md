@@ -2,18 +2,12 @@
 
 ## Quick Start
 
-Requirements
+Install [flair NLP](https://github.com/flairNLP/flair)
 
-Install flair NLP
-
-```
-https://github.com/flairNLP/flair
-```
-
-Run Flair NER as REST Service
+Run Flair NER as REST Service, whereas make sure that port 5000 is available
 
 ```
-python flair-ner-as-service.py
+python flair-ner-rest.py
 ```
 
 Test it
