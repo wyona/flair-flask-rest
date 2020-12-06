@@ -3,11 +3,12 @@ from flair.models import SequenceTagger
 from flair.data import Sentence
 
 class NamedEntity():
-    def __init__(self, text, score):
+    def __init__(self, text, tag, score):
         self.t = text
+        self.tag = tag
         self.s = score
     def to_dict(self):
-        return {"text": self.t, "score": self.s}
+        return {"text": self.t, "tag": self.tag, "score": self.s}
  
 app = Flask(__name__)
  
@@ -25,8 +26,12 @@ def namedEntityRecognition():
     entities=[]
     for spanOfEntity in sentence.get_spans('ner'):
         print('Entity: ', spanOfEntity)
-        print('Named entity: ', NamedEntity(spanOfEntity.text, spanOfEntity.score).to_dict())
-        entities.append(NamedEntity(spanOfEntity.text, spanOfEntity.score).to_dict())
+        print('Labels: ', spanOfEntity.labels)
+        print('Tag: ', spanOfEntity.tag)
+        namedEntity = NamedEntity(spanOfEntity.text, spanOfEntity.tag, spanOfEntity.score)
+        print('Named entity: ', namedEntity.to_dict())
+        entities.append(namedEntity.to_dict())
+        #entities.append(spanOfEntity.to_dict())
 
     response = {'submitted-message': message, 'entities': entities, 'flair-version': '0.7'}
     return jsonify(response), 200
