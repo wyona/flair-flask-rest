@@ -23,18 +23,12 @@ def namedEntityRecognition():
     print('Analyzed: ', sentence)
 
     entities=[]
-    scores=[]
-    texts=[]
     for spanOfEntity in sentence.get_spans('ner'):
         print('Entity: ', spanOfEntity)
-        #print('Named entity: ', jsonify(NamedEntity(spanOfEntity.text, spanOfEntity.score)))
         print('Named entity: ', NamedEntity(spanOfEntity.text, spanOfEntity.score).to_dict())
-        entities.append(NamedEntity(spanOfEntity.text, spanOfEntity.score))
-        scores.append(spanOfEntity.score)
-        texts.append(spanOfEntity.text)
+        entities.append(NamedEntity(spanOfEntity.text, spanOfEntity.score).to_dict())
 
-    response = {'submitted-message': message, 'entities': 'TODO', 'scores': scores, 'texts': texts}
-    #response = {'submitted-message': message, 'entities': entities, 'scores': scores, 'texts': texts}
+    response = {'submitted-message': message, 'entities': entities, 'flair-version': '0.7'}
     return jsonify(response), 200
  
 if __name__ == "__main__":
