@@ -61,3 +61,5 @@ docker tag flair-ner-cpu USERNAME/REPONAME:flair-ner-cpu_VERSION
 ```
 docker login -u USERNAME -p PASSWORD docker.io && docker push USERNAME/REPONAME:flair-ner-cpu_VERSION
 ```
+
+https://hub.docker.com/r/michaelwechner/public/tags
