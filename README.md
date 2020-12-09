@@ -51,3 +51,13 @@ docker build -t flair-ner-cpu -f ./Dockerfile.cpu .
 ```bash
 docker run -p 5000:5000 flair-ner-cpu
 ```
+
+## How to upload to Docker Hub
+
+```
+docker tag flair-ner-cpu USERNAME/REPONAME:flair-ner-cpu_VERSION
+```
+
+```
+docker login -u USERNAME -p PASSWORD docker.io && docker push USERNAME/REPONAME:flair-ner-cpu_VERSION
+```
