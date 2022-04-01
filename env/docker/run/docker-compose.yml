@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  flair-ner-cpu:
+    image: michaelwechner/public:flair-ner-cpu_0.7-1
+    #image: ${DOCKER_IMAGE_TAG}
+    container_name: flair-ner-cpu
+    restart: always
+    #volumes:
+    #  - /home/wyona/data:/data
+    #environment:
+    #  - LOG_LEVEL=DEBUG
+    ports:
+      - 5555:5000
