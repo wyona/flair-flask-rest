@@ -4,6 +4,16 @@
 
 Install [flair NLP](https://github.com/flairNLP/flair)
 
+```
+pip install flair
+```
+
+or update
+
+```
+pip show flair
+```
+
 Run Flair NER as REST Service, whereas make sure that port 5000 is available
 
 ```
