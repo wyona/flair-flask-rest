@@ -1,3 +1,4 @@
+# https://github.com/flairNLP/flair/blob/master/resources/docs/TUTORIAL_7_TRAINING_A_MODEL.md
 import flair.datasets
 
 corpus = flair.datasets.UD_ENGLISH()
