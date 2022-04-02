@@ -33,7 +33,8 @@ def namedEntityRecognition():
         entities.append(namedEntity.to_dict())
         #entities.append(spanOfEntity.to_dict())
 
-    response = {'submitted-message': message, 'entities': entities, 'flair-version': '0.7'}
+    # TODO: Get flair version from flair code itself
+    response = {'submitted-message': message, 'entities': entities, 'flair-version': '0.10'}
     return jsonify(response), 200
  
 if __name__ == "__main__":
