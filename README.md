@@ -12,6 +12,8 @@ or update
 
 ```
 pip show flair
+sudo pip3 install flair --upgrade
+pip show flair
 ```
 
 Run Flair NER as REST Service, whereas make sure that port 5000 is available
