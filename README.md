@@ -83,3 +83,8 @@ docker login -u USERNAME -p PASSWORD docker.io && docker push USERNAME/REPONAME:
 whereas for example USERNAME is michaelwechner, REPONAME is public and VERSION is 0.7-1
 
 https://hub.docker.com/r/michaelwechner/public/tags
+
+## How to finetune flair
+
+- Tagging / Labeling Dataset: https://en.wikipedia.org/wiki/Inside%E2%80%93outside%E2%80%93beginning_(tagging)
+- Adding new Entities to Flair NER models: https://discuss.huggingface.co/t/adding-new-entities-to-flair-ner-models/3913
