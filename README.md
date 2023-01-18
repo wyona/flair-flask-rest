@@ -5,21 +5,21 @@
 Install [flair NLP](https://github.com/flairNLP/flair)
 
 ```
-pip install flair
+pip3 install flair
 ```
 
 or update
 
 ```
-pip show flair
+pip3 show flair
 sudo pip3 install flair --upgrade
-pip show flair
+pip3 show flair
 ```
 
 Run Flair NER as REST Service, whereas make sure that port 5000 is available
 
 ```
-python flair-ner-rest.py
+python3 flair-ner-rest.py
 ```
 
 Test it
