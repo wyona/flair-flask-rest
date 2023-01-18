@@ -23,10 +23,16 @@ tagger = SequenceTagger.load('ner')
 # Get named entitities
 @app.route('/api/v1/ner', methods=['POST'])
 def namedEntityRecognition():
-    if not request.json or not 'message' in request.json:
-        abort(400)
 
-    message = request.json['message']
+    message = None
+    try:
+        logger.info(f"Try to parse request body as JSON ...")
+        message = request.json['message']
+    except:
+        logger.error("Request body does not seem to be correct JSON")
+        response = {'error_message': 'Flair: Get named entities: Request body does not seem to be correct JSON', 'error_code':'NO_JSON'}
+        return jsonify(response), 400
+
     sentence = Sentence(message)
     tagger.predict(sentence)
     logger.info(f"Analyzed: {sentence}")
