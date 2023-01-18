@@ -24,6 +24,14 @@ python3 flair-ner-rest.py
 
 Test it
 
+Check health
+
+```
+curl --request GET --url http://localhost:5000/api/v1/health
+```
+
+Get named entities
+
 ```
 curl --request POST --url http://localhost:5000/api/v1/ner --header 'content-type: application/json' --data '{ "message":"When were Alexander von Humboldt and Bernhard Riemann born?" }'
 ```
