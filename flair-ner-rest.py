@@ -1,6 +1,7 @@
 from flask import abort, Flask, jsonify, request
 from flair.models import SequenceTagger
 from flair.data import Sentence
+from flair import __version__
 
 class NamedEntity():
     def __init__(self, text, tag, score):
@@ -33,8 +34,7 @@ def namedEntityRecognition():
         entities.append(namedEntity.to_dict())
         #entities.append(spanOfEntity.to_dict())
 
-    # TODO: Get flair version from flair code itself
-    response = {'submitted-message': message, 'entities': entities, 'flair-version': '0.10'}
+    response = {'submitted-message': message, 'entities': entities, 'flair-version': __version__}
     return jsonify(response), 200
  
 if __name__ == "__main__":
