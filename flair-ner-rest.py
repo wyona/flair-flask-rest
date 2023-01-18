@@ -20,6 +20,7 @@ logger.setLevel(logging.INFO)
  
 tagger = SequenceTagger.load('ner')
  
+# Get named entitities
 @app.route('/api/v1/ner', methods=['POST'])
 def namedEntityRecognition():
     if not request.json or not 'message' in request.json:
@@ -42,6 +43,16 @@ def namedEntityRecognition():
 
     response = {'submitted-message': message, 'entities': entities, 'flair-version': __version__}
     return jsonify(response), 200
+# end def
+
+# Health check endpoint
+@app.route('/api/v1/health', methods=['GET'])
+def checkHealth():
+    logger.info("Check health ...")
+
+    response = {'status':'UP','version':__version__, 'model-name':'TODO'}
+    return jsonify(response), 200
+# end def
  
 if __name__ == "__main__":
     logger.info(f"Starting server ...")
