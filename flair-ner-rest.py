@@ -50,7 +50,10 @@ def namedEntityRecognition():
 def checkHealth():
     logger.info("Check health ...")
 
-    response = {'status':'UP','version':__version__, 'model-name':'TODO'}
+    response = {'status':'UP','version':__version__}
+    # TODO: Get model from SequenceTagger flair/models/sequence_tagger_model.py
+    #response = {'status':'UP','version':__version__, 'model-name':'TODO'}
+
     return jsonify(response), 200
 # end def
  
