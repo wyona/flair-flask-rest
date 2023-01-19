@@ -81,14 +81,14 @@ curl --request POST --url http://localhost:5000/api/v1/ner --header 'content-typ
 ## How to upload to Docker Hub
 
 ```
-docker tag flair-ner-cpu USERNAME/REPONAME:flair-ner-cpu_VERSION
+docker tag flair-ner-cpu USERNAME/REPONAME:flair-ner-cpu-VERSION
 ```
 
 ```
 docker login -u USERNAME -p PASSWORD docker.io && docker push USERNAME/REPONAME:flair-ner-cpu_VERSION
 ```
 
-whereas for example USERNAME is michaelwechner, REPONAME is public and VERSION is 0.7-1
+whereas for example USERNAME is michaelwechner, REPONAME is public and VERSION is 0.11.3
 
 https://hub.docker.com/r/michaelwechner/public/tags
 
