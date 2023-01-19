@@ -2,8 +2,10 @@ FROM python:3.9-slim
 
 RUN apt-get update && apt-get install -y unixodbc-dev gcc g++
 
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
 RUN pip3 install flair
-RUN pip3 install Flask
 
 COPY flair-ner-rest.py .
 
