@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   flair-ner-cpu:
-    image: michaelwechner/public:flair-ner-cpu_0.7-1
+    image: michaelwechner/public:flair-ner-cpu-0.11.3
     #image: ${DOCKER_IMAGE_TAG}
     container_name: flair-ner-cpu
     restart: always
