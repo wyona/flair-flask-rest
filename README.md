@@ -5,6 +5,7 @@
 Install [flair NLP](https://github.com/flairNLP/flair)
 
 ```
+pip3 install --no-cache-dir -r requirements.txt
 pip3 install flair
 ```
 
