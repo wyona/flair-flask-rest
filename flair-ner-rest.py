@@ -1,6 +1,6 @@
 import logging
 
-from flask import abort, Flask, jsonify, request
+from flask import Flask, jsonify, request
 from flair.models import SequenceTagger
 from flair.data import Sentence
 from flair import __version__
