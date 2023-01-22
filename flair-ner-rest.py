@@ -12,14 +12,14 @@ class NamedEntity():
         self.s = score
     def to_dict(self):
         return {"text": self.t, "tag": self.tag, "score": self.s}
- 
+
 app = Flask(__name__)
 logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
- 
+
 tagger = SequenceTagger.load('ner')
- 
+
 # Get named entitities
 @app.route('/api/v1/ner', methods=['POST'])
 def namedEntityRecognition():
@@ -62,7 +62,7 @@ def checkHealth():
 
     return jsonify(response), 200
 # end def
- 
+
 if __name__ == "__main__":
     logger.info(f"Starting server ...")
     from waitress import serve
